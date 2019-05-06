@@ -1,6 +1,7 @@
 const express = require('express');
 const { validateStudentInfo } = require('./utils/validate');
 const app = express();
+const port = process.env.PORT || 5000;
 
 app.set('view engine', 'hbs');
 app.use(express.static(__dirname + '/public/js'));
@@ -27,6 +28,6 @@ app.post('/student/info', (req, res) => {
     }
 });
 
-app.listen(8080, () => {
+app.listen(port, () => {
     console.log('server is starting...');
 });
