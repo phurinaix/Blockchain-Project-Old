@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Thammasat University</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Neucha" rel="stylesheet">
 </head>
 <body>
@@ -33,40 +33,63 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/request">Request</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="exit">Exit</a>
+                    </li>
                 </ul>
             </div>
         </nav>
 
-        <h2>Welcome <strong>{{ name }}</strong></h2>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card bg-light mb-3" style="max-width: 18rem;">
+                    <div class="card-header text-center"><h4><strong>Information</strong></h4></div>
+                    <div class="card-body">
+                        <h5 class="card-title text-danger">Student name</h5>
+                        <p class="card-text">{{ name }}</p>
+                        <h5 class="card-title text-danger">Student ID</h5>
+                        <p class="card-text">{{ id }}</p>
+                    </div>
+                </div>
+            </div>
 
-        <h4>Please first download the blockchain wallet from the link</h4>
-        <ul>
-            <li>For iOS: <u>https://itunes.apple.com/us/app/blockcerts-wallet/id1146921514?mt=8</u></li>
-            <li>For Android: <u>https://play.google.com/store/apps/details?id=com.learningmachine.android.app&hl=en</u></li>
-        </ul>
-        <h4>Install it on your phone or computer.</h4>
-        <h4>Once you have your public key provide it to us:</h4>
-        <form action="/student/key" method="POST" class="col-md-5" autocomplete="off">
-            <div class="form-group">
-                <label for="publicKey">Public Key</label>
-                <input type="text" name="key" class="form-control">
-            </div>
-            <div class="form-check">
-                <label for="">Which documents you want ?</label>
-                <br>
-                <input type="checkbox" class="form-check-input" name="diploma" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Diploma</label>
-                <br>
-                <input type="checkbox" class="form-check-input" name="transcript" id="exampleCheck2">
-                <label class="form-check-label" for="exampleCheck1">Transcript</label>
-            </div>
-            <input type="submit" value="Send" class="btn btn-warning w-100 font-weight-bold">
-        </form>
+            <form action="/student/key" method="POST" class="col-md-6" autocomplete="off">
+                <h4>Please first download the blockchain wallet from the link</h4>
+                <ul>
+                    <li>For iOS: <u>https://itunes.apple.com/us/app/blockcerts-wallet/id1146921514?mt=8</u></li>
+                    <li>For Android: <u>https://play.google.com/store/apps/details?id=com.learningmachine.android.app&hl=en</u></li>
+                </ul>
+                <h4>Install it on your phone or computer.</h4>
+                <h4>Once you have your public key provide it to us:</h4>
+                
+                <div class="w-75 m-auto">
+                    <div class="alert alert-danger" role="alert" id="error"></div>
+                    <div class="input-group mb-3 mt-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">🔑</span>
+                        </div>
+                        <input type="text" class="form-control" name="key" placeholder="Public Key" aria-label="Username" aria-describedby="basic-addon1" autofocus required>
+                    </div>
+                    <div class="form-check">
+                        <label for="">Which documents you want ?</label>
+                        <br>
+                        <input type="checkbox" class="form-check-input" name="diploma" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Diploma</label>
+                        <br>
+                        <input type="checkbox" class="form-check-input" name="transcript" id="exampleCheck2">
+                        <label class="form-check-label" for="exampleCheck1">Transcript</label>
+                    </div>
+                    <input type="submit" value="Send" class="btn btn-warning w-100 mt-4 mb-5 font-weight-bold">
+                </div>
+            </form>
+        </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="script.js"></script>
+    <script src="instruction.js"></script>
 </body>
 </html>

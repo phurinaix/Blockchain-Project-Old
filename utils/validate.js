@@ -1,3 +1,5 @@
+const WAValidator = require('wallet-address-validator');
+
 const validateStudentInfo = (name, id) => {
     if (!(/^[A-Za-z]+$/.test(name))) {
         return 'name1';
@@ -12,4 +14,10 @@ const validateStudentInfo = (name, id) => {
     return 0;
 }
 
-module.exports = { validateStudentInfo };
+const validatePublickey = (address) => {
+    return WAValidator.validate(address, 'BTC');
+    // return true;
+}
+
+
+module.exports = { validateStudentInfo, validatePublickey };
