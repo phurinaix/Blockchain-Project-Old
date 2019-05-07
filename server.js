@@ -10,6 +10,11 @@ app.use(express.static(__dirname + '/public/css'));
 app.use(session({secret: 'ssshhhhh'}));
 app.use(express.urlencoded());
 app.use(express.json());
+app.use(function(req, res, next) {
+    if (!req.user)
+        res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
+    next();
+});
 
 var sess;
 app.get('/', (req, res) => {
