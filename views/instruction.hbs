@@ -37,13 +37,31 @@
             </div>
         </nav>
 
-        <h2 class="text-center">Welcome <strong>{{ name }}</strong></h2>
+        <h2>Welcome <strong>{{ name }}</strong></h2>
 
-        <h2>Instruction for the student:</h2>
+        <h4>Please first download the blockchain wallet from the link</h4>
         <ul>
-            <li>Step 1: Download Wallet app on your phone at <u>https://play.google.com/store/apps/details?id=com.learningmachine.android.app&hl=en</u></li>
-            <li>Step 2: Provide us your public key</li>
+            <li>For iOS: <u>https://itunes.apple.com/us/app/blockcerts-wallet/id1146921514?mt=8</u></li>
+            <li>For Android: <u>https://play.google.com/store/apps/details?id=com.learningmachine.android.app&hl=en</u></li>
         </ul>
+        <h4>Install it on your phone or computer.</h4>
+        <h4>Once you have your public key provide it to us:</h4>
+        <form action="" method="POST" class="col-md-5" autocomplete="off">
+            <div class="form-group">
+                <label for="publicKey">Public Key</label>
+                <input type="text" class="form-control">
+            </div>
+            <div class="form-check">
+                <label for="">Which documents you want ?</label>
+                <br>
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Diploma</label>
+                <br>
+                <input type="checkbox" class="form-check-input" id="exampleCheck2">
+                <label class="form-check-label" for="exampleCheck1">Transcript</label>
+            </div>
+            <input type="submit" value="Send" class="btn btn-warning w-100 font-weight-bold">
+        </form>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
