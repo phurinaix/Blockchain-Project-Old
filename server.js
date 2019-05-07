@@ -28,6 +28,11 @@ app.post('/student/info', (req, res) => {
     }
 });
 
+app.post('/student/key', (req, res) => {
+    // do stuff here
+    res.redirect('/?status=success');
+});
+
 app.listen(port, () => {
     console.log('server is starting...');
 });
