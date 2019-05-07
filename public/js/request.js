@@ -13,4 +13,5 @@ switch(errorValue) {
 if(alertValue !== '') {
     $(".alert").html(alertValue);
     $(".alert").show();
+    window.history.replaceState({}, document.title, "/request");
 }
