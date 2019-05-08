@@ -5,8 +5,7 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 app.set('view engine', 'hbs');
-app.use(express.static(__dirname + '/public/js'));
-app.use(express.static(__dirname + '/public/css'));
+app.use(express.static(__dirname + '/public'));
 app.use(session({secret: 'ssshhhhh'}));
 app.use(express.urlencoded());
 app.use(express.json());

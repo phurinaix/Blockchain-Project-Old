@@ -1,6 +1,13 @@
 body {
     font-family: 'Neucha', cursive;
 }
+#particle {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
 .container {
     transition: 0.5s;
 }
